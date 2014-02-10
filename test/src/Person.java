@@ -1,33 +1,54 @@
 
+
 public class Person {
 	private String _firstName;
 	private String _familyName;
 	private String _sex;
-
+	private String _birthDay;
+	private String _telephone;
+	
+	private final String _empty = "--";
 	
 	// Constructors
 	/**
 	 * empty person constructor
 	 */
 	public Person() {
-		_firstName = "";
-		_familyName = "";
-		_sex = "";
+		this._firstName = this._empty;
+		this._familyName = this._empty;
+		this._sex = this._empty;
+		this._birthDay = this._empty;
+		this._telephone = this._empty;
+		
 	}
 	/**
-	 * Constructor that represents Person Class. Sex must be "M" or "F" otherwize it will be "--"
+	 * Constructor that represents Person Class. Sex must be "M" or "F" otherwise it will be "--"
 	 * @param firstName String
 	 * @param familyName String
 	 * @param sex String 
 	 */
-	public Person(String firstName,String familyName ,String sex) {
+	public Person(String firstName,String familyName ,String sex,String date,String telephone) {
 		this._firstName = firstName;
 		this._familyName = familyName;
 		if (sex == "M" || sex == "F")
 			this._sex = sex;
 		else 
-			this._sex = "--";
+			this._sex = _empty;
+		this._birthDay=date;
+		this._telephone = telephone;
+		
+		
 }
+	/**
+	 * Copy constructor
+	 * @param other
+	 */
+	public Person(Person other) {
+		this._firstName = other._firstName;
+		this._familyName = other._familyName;
+		this._sex = other._sex;
+		this._birthDay = other._birthDay;
+	}
 	
 	/**
 	 * 
@@ -37,9 +58,12 @@ public class Person {
 	public Person (String firstName,String familyName) {
 		this._firstName = firstName;
 		this._familyName = familyName;
-		this._sex = "--";
+		this._sex = this._empty;
+		this._birthDay = this._empty;
+		this._telephone = this._empty;
 	}
 	
+
 	/**
 	 * Set first Name
 	 * @param name first name
@@ -64,6 +88,9 @@ public class Person {
 		this._sex = sex;
 	}
 	
+	public void setDate (String date) {
+		this._birthDay = date;
+	}
 	/**
 	 * return First Name
 	 * @return First Name
@@ -98,8 +125,9 @@ public class Person {
 		String printName = getFirstName();
 		String printFamily = getFamilyName();
 		String printSex = getSex();
+		// Format birth day.
 		
-		return "FirstName:\t"+printName+"\nFamily Name:\t"+printFamily+"\nGender:\t\t"+printSex;
+		return "FirstName:\t"+printName+"\nFamily Name:\t"+printFamily+"\nGender:\t\t"+printSex+"\nBirth day:\t"+this._birthDay+"\n"+"Telephone:\t"+this._telephone+"\n";
 	}
 	
 	
