@@ -48,6 +48,7 @@ public class Person {
 		this._familyName = other._familyName;
 		this._sex = other._sex;
 		this._birthDay = other._birthDay;
+		this._telephone = other._telephone;
 	}
 	
 	/**
@@ -115,6 +116,10 @@ public class Person {
 		return this._sex;
 	}
 	
+	public String getTelephone() {
+		return this._telephone;
+	}
+	
 	/**
 	 * Print Person:
 	 * First name:
@@ -127,7 +132,7 @@ public class Person {
 		String printSex = getSex();
 		// Format birth day.
 		
-		return "FirstName:\t"+printName+"\nFamily Name:\t"+printFamily+"\nGender:\t\t"+printSex+"\nBirth day:\t"+this._birthDay+"\n"+"Telephone:\t"+this._telephone+"\n";
+		return "FirstName:\t"+printName+"\nFamily Name:\t"+printFamily+"\nGender:\t\t"+printSex+"\nBirth day:\t"+this._birthDay+"\n"+"Telephone:\t"+getTelephone()+"\n";
 	}
 	
 	
