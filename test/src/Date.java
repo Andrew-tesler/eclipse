@@ -16,11 +16,12 @@ public class Date {
 	public Date() {
 		this._day=0;
 		this._month=0;
-		this._year=1970;
+		this._year=0;
 
-		this._set = true;
+		this._set = false;
 	}
 	
+
 	/**
 	 * Set values for date must be between 0-31 for day
 	 * 0-12 for month
@@ -73,6 +74,12 @@ public class Date {
 		this._set = true;
 	}
 
+	public void Date(Date date) {
+		this._day = date._day;
+		this._month = date._month;
+		this._year = date._year;
+		this._set = true;
+	}
 	/**
 	 * Set the day parameter (1-31) 
 	 * @param day number 
@@ -82,6 +89,7 @@ public class Date {
 			this._day = day;
 		else 
 			this._day = 0;
+		this._set = true;
 	}
 	
 	/**
@@ -95,6 +103,7 @@ public class Date {
 			this._month = month;
 		else
 			this._month = 0;
+		this._set = true;
 	}
 	
 	/**
@@ -103,6 +112,8 @@ public class Date {
 	 */
 	public void setYear(int year) {
 		this._year = year;
+		
+		this._set = true;
 	}
 	
 	/**
@@ -143,6 +154,7 @@ public class Date {
 		setYear(0);
 		this._set = false;
 	}
+	
 	
 	/**
 	 * Return String representation of date in the format DD/MM/YYYY

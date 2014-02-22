@@ -4,10 +4,9 @@ public class Person {
 	private String _firstName;
 	private String _familyName;
 	private String _sex;
-	private String _birthDay;
+	private Date _birthDay;
 	private String _telephone;
-	
-	private final String _empty = "--";
+	private final String _empty = "";
 	
 	// Constructors
 	/**
@@ -17,8 +16,10 @@ public class Person {
 		this._firstName = this._empty;
 		this._familyName = this._empty;
 		this._sex = this._empty;
-		this._birthDay = this._empty;
 		this._telephone = this._empty;
+		this._birthDay = new Date();
+		
+		
 		
 	}
 	/**
@@ -27,7 +28,7 @@ public class Person {
 	 * @param familyName String
 	 * @param sex String 
 	 */
-	public Person(String firstName,String familyName ,String sex,String date,String telephone) {
+	public Person(String firstName,String familyName ,String sex,Date date,String telephone) {
 		this._firstName = firstName;
 		this._familyName = familyName;
 		if (sex == "M" || sex == "F")
@@ -60,7 +61,7 @@ public class Person {
 		this._firstName = firstName;
 		this._familyName = familyName;
 		this._sex = this._empty;
-		this._birthDay = this._empty;
+		this._birthDay = new Date();
 		this._telephone = this._empty;
 	}
 	
@@ -89,9 +90,10 @@ public class Person {
 		this._sex = sex;
 	}
 	
-	public void setDate (String date) {
+	public void setDate (Date date) {
 		this._birthDay = date;
 	}
+	
 	/**
 	 * return First Name
 	 * @return First Name
